@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import InputMessage from "./components/InputMessage";
+import MessageReceived from "./components/MessageReceived";
+import MessageSent from "./components/MessageSent";
+import ChatLayout from "./layouts/ChatLayout";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
+      <ChatLayout>
+        <>
+          <MessageReceived />
+          <MessageSent />
+          <InputMessage />
+        </>
+      </ChatLayout>
     </div>
   );
 }
-
-export default App;
